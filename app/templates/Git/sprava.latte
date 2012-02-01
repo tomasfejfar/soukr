@@ -1,0 +1,138 @@
+{* This is temporary page, you can delete it *}
+
+{block content}
+
+	<h1>Git - správa větví </h1>
+	<br />
+	<a n:href="Git:konflikty"><< Základní konflikty při slučování větví</a> |
+<a n:href="Git:preskladani">Přeskládání >></a>
+	<hr>
+	
+	<div class="obsah">
+
+	<h2>$ git branch</h2>
+		<code>
+			* master<br />
+			  test<br />
+		</code>
+	<h2>$ git branch -v</h2>
+		<p>
+			s poslední revizí
+		</p>
+	<h2>$ git branch --merged</h2>
+		<p>
+			které větve byly začleněny do větve, na které se nacházíte
+		</p>
+	<h2>$ git branch --no-merged</h2>
+		<p>
+			Pokus o odstranění větve, která nabyla začleněna bude neúspěšný.
+		</p>
+	<h2>$ git branch -D test</h2>
+
+	<h2>Dlouhé větve</h2>
+		<pre>
+		 +------+
+		 |  C1  +--------------------------------------------------&gt;   master
+		 +--+---+
+		    |   +----+ +----+ +----+  +----+
+		    +---+ C2 | | C3 | | C4 |  | C5 +-----------------------&gt;   develop
+		        +----+ +----+ +----+  +-+--+
+		                                |
+		                                |   +----+   +----+
+		                                +---+ C6 |   | C7 +--------&gt;   topic
+		                                    +----+   +----+
+		</pre>
+
+	<h2>Tématické větve</h2>
+		<p>
+			pro konkrétní účel
+		</p>
+		<pre>
+
+
+		        topic3        master                topic2
+
+		       +------+      +------+              +-----+
+		       |  C13 |      |  C11 |    topic1    | C12 |
+		       +---+--+      +---+--+              +--+--+
+		           |             |                    |
+		       +---v--+      +---v--+   +-----+    +--v-+
+		       |  C9  |      |  C10 |   | C5  |    | C7 |
+		       +--+---+      +---+--+   +--+--+    +--+-+
+		          |              |         |          |
+		          |          +---v--+    +-v--+    +--v-+
+		          +----------+  C8  |    | C4 |    | C6 |
+		                     +---+--+    +--+-+    +--+-+
+		                         |          |         |
+		                     +---v--+    +--v-+       |
+		                     |  C2  +    + C3 +-------+
+		                     +---+--+    +-+--+
+		                         |         |
+		                     +---v--+      |
+		                     |  C1  +------+
+		                     +---+--+
+		                         |
+		                     +---v--+
+		                     |  C0  |
+		                     +------+
+		</pre>
+		<h2>Vzdálené větve</h2>
+		<p>
+			Vzdálená větev je reference na stav větve ve vzdáleném repozitáři. Je to lokální větev, která nelze
+			přesouvat. Přesouvají se automaticky při síťové komunikaci. Vzdálené větve se podobají záložkám.
+		</p>
+		<h2> origin / master</h2>
+		<h2>$ git fetch origin</h2>
+		<p>
+			Zjistí který server je origin a vyzvedne zněj všechna data, která nemáte a aktualizuje Vaši lokální
+			databázi.
+		</p>
+		<pre>		                    +---------------+
+		                    |origin / master|
+		                    +---+-----------+
+		                        |
+		 +------+ +------+  +---+--+
+		 |  C1  | |  C2  |  |  C3  |
+		 +------+ +------+  +---+--+
+		                        |
+		                    +---+--+
+		                    |master|
+		                    +------+
+		</pre>
+		<h2>$ git push origin vetev</h2>
+		<p>
+			Odeslání své lokální větve do vzdáleného repozitáře a vytvoření vzdálené větve.
+		</p>
+		<h2>$ git push origin vetev:novy_nazev</h2>
+		<p>
+			Vzdálená větev bude mít jiný název, než naše lokální.
+		</p>
+		<h2>$ git fetch </h2>
+		<p>
+			Nemáme automaticky k dispozici lokální, editovatelné kopie,pouze ukazatel origin/vetev.
+		</p>
+		<h2>$ git pull</h2>
+		<p>
+			Aktualizuje data ze vzdalene vetve do sve lokalni vetve
+		</p>
+		<h2>$ git merge origin/vetev</h2>
+		<p>
+			Máme k dispozici sice pouze ukazatel na vzdálenou větev, ale můžeme začlenit její data do naší větve.
+		</p>
+		
+		<h2>Sledující větve</h2>
+		<h2>$ git checkout -b vetev origin/vetev</h2>
+		<p>
+			Větev vetev je automaticky trackována se vzdálenou větví origin/vetev
+		</p>
+		<h2>$ git checkout --track origin/vetev</h2>
+		<h2>$ git push origin :vzdalena_vetev</h2>
+		<p>
+			Smaže vzdálenou větev
+		</p>
+		
+	</div>
+
+
+
+{/block}

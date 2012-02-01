@@ -1,0 +1,52 @@
+{* This is temporary page, you can delete it *}
+
+{block content}
+
+	<h1>Git - nastavení</h1>
+	<br />
+	<a n:href="Git:instalace"><< Instalace</a> |
+<a n:href="Git:inicializace">Inicializace >></a>
+	<hr>
+	
+	<div class="obsah">
+
+	<h2>Totožnost uživatele</h2>
+		<p>
+			<code>
+				$ git config --global user.name "Radim Daniel Pánek" <br />
+				$ git config --global user.email rdpanek@gmail.com
+			</code>
+		</p>
+
+	<h2>Editor a nástroj diff</h2>
+		<p>
+			<code>
+				$ git config --global core.editor emacs <br />
+				$ git config --global merge.tool vimdif
+			</code>
+		</p>
+
+	<h2>Kontrola provedeného nastavení</h2>
+		<p>
+			<code>
+				$ git config --list
+			</code>
+			<br /><br />
+			Nebo pro konkrétní položku
+			<br /><br />
+			<code>
+				$ git config user.name
+			</code>
+		</p>
+	
+	<h2>Kde hledat pomoc</h2>
+		<p>
+			<code>
+				$ git help [příkaz] <br />
+				$ git [příkaz] --help <br />
+				$ man git-[příkaz]
+			</code>
+		</p>
+
+	</div>
+{/block}

@@ -1,0 +1,44 @@
+{* This is temporary page, you can delete it *}
+
+{block content}
+
+	<h1>Git - inicializace </h1>
+	<br />
+	<a n:href="Git:nastaveni"><< Nastavení</a> |
+<a n:href="Git:stavy">Kontrola stavů souborů >></a>
+	<hr>
+	
+	<div class="obsah">
+
+	<h2>Získání repozitáře Git</h2>
+		<ul>
+			<li>importování do systému Git</li>
+			<li>naklonování existujícího repozitáře</li>
+		</ul>
+	<h2>Inicializace repozitáře v existujícím adresáři - zahájení sledování</h2>
+		<ul>
+			<li>
+				$ git init
+			</li>
+			<li>
+				$ git add
+			</li>
+			<li>
+				$ git commit -m "Zpráva revize"
+			</li>
+		</ul>
+	<h2>Klonování existujícího repozitáře</h2>
+		<ul>
+			<li>
+				$ git clone git@github.com:Radim-Daniel-Panek/test-git.git git-test
+			</li>
+		</ul>
+	<h2>Nahrávání změn do repozitáře</h2>
+		<ul>
+			<li>Stavy: sledován - nesledovan</li>
+			<li>Sledované - součástí posledního snímku (změněno / nezměněno / připraveno k zapsání )</li>
+			<li>Nesledované - nebyly součástí posledního snímku a nejsou v oblasti připravených změn</li>
+			<li>Po naklonování - sledované - nezměněné (dosud se neprovedli žádné změny)</li>
+		</ul>
+	</div>
+{/block}

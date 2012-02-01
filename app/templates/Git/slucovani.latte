@@ -1,0 +1,111 @@
+{* This is temporary page, you can delete it *}
+
+{block content}
+
+	<h1>Git - základní slučování větví </h1>
+	<br />
+	<a n:href="Git:vetve"><< Větve</a> |
+<a n:href="Git:konflikty">Základní konflikty při slučování >></a>
+	<hr>
+	
+	<div class="obsah">
+
+	<p>
+		Při přepínání větví, pokud máte čistý pracovní stav. Existují způsoby, jak se tím nezabývat. Pokud
+		by v oblasti připravených změn byli nějaké změny - Git by přepnutí nedovolil.
+	</p>
+	<h2>$ git checkout -b hotfix</h2>
+	<p>
+		provedení commitů a přepnutí zpět na master
+	</p>
+		<pre>		                  +------+
+		                  |master|
+		                  +--+---+
+		                     |
+		  +----+  +----+  +--+-+
+		  | C0 &lt;--+ C1 &lt;--+ C2 |
+		  +----+  +----+  +--+-+
+		                     |    +----+
+		                     +----+ C3 |
+		                          +--+-+
+		                             |
+		                          +--+---+
+		                          |hotfix|
+		                          +------+
+		</pre>
+
+	<h2>Rychle v před</h2>
+	<p>
+		<ul>
+			<li>
+				$ git checkout master
+			</li>
+			<li>
+				$ git merge hotfix
+			</li>
+			<li>
+				Fast forward
+			</li>
+		</ul>
+	</p>
+		<pre>		                  +------+
+		                  |master|
+		                  +--+---+
+		                     |
+		  +----+  +----+  +--+-+  +----+
+		  | C0 &lt;--+ C1 &lt;--+ C2 &lt;--+ C3 |
+		  +----+  +----+  +--+-+  +--+-+
+		                             |
+		                          +--+---+
+		                          |hotfix|
+		                          +------+
+		</pre>
+
+		<pre>		                          +------+
+		                          |master|
+		                          +--+---+
+		                             |
+		  +----+  +----+  +--+-+  +--v-+
+		  | C0 &lt;--+ C1 &lt;--+ C2 &lt;--+ C3 |
+		  +----+  +----+  +--+-+  +--+-+
+		                             |
+		                          +--+---+
+		                          |hotfix|
+		                          +------+
+		</pre>
+		<h2>$ git branch -d hotfix</h2>
+		<h2>třícestné sloučení</h2>
+		<pre>		                                +------+
+		                                |master|
+		                                +--+---+
+		                                   |
+		  +----+  +----+  +--+-+  +--v-+ +----+
+		  | C0 &lt;--+ C1 &lt;--+ C2 &lt;--+ C3 &lt;-+ C7 |
+		  +----+  +----+  +--+-+  +--+-+ +----+
+		                             |
+		                             |
+		                             |   +----+  +----+
+		                             +---+ C8 &lt;--+ C9 |
+		                                 +----+  +--+-+
+		                                            |
+		                                          +-+---+
+		                                          |test2|
+		                                          +-----+
+		</pre>
+		<pre>		                                                +------++-+---+
+		                                                |master||test2|
+		                                                +--+---++-----+
+		                                                   |
+		  +----+  +----+  +--+-+  +--v-+ +----+          +----+
+		  | C0 &lt;--+ C1 &lt;--+ C2 &lt;--+ C3 &lt;-+ C7 &lt;----------+ c6 |
+		  +----+  +----+  +--+-+  +--+-+ +----+          +-+--+
+		                             |                     |
+		                             |                     |
+		                             |   +----+  +----+    |
+		                             +---+ C8 &lt;--+ C9 +----+
+		                                 +----+  +--+-+
+		</pre>
+	</div>
+
+
+{/block}

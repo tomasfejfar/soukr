@@ -1,0 +1,42 @@
+{* This is temporary page, you can delete it *}
+
+{block content}
+
+	<h1>Git - konflikty při slučování </h1>
+	<br />
+	<a n:href="Git:slucovani"><< Základní slučování větví</a> |
+<a n:href="Git:sprava">Správa větví >></a>
+	<hr>
+	
+	<div class="obsah">
+
+	<code>
+		Radim-Daniel-Paneks-MacBook-Pro:test-git rdpanek$ git merge test<br />
+		Auto-merging SouborB.txt<br />
+		CONFLICT (content): Merge conflict in SouborB.txt<br />
+		Automatic merge failed; fix conflicts and then commit the result.<br />
+
+	</code>
+		<p>
+			Obsah souboru SouborB.txt
+		</p>
+		<code>
+			<<<<<<< HEAD<br />
+			ahoj2<br />
+			=======<br />
+			ahoj1<br />
+			>>>>>>> test<br />
+			hello<br />
+			tchus<br />
+
+		</code>
+		<h2>$ git add SouborB.txt</h2>
+
+		<h2>$ git mergetool</h2>
+
+		<h2> $ git commit</h2>
+	</div>
+
+
+
+{/block}

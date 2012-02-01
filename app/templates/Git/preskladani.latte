@@ -1,0 +1,85 @@
+{* This is temporary page, you can delete it *}
+
+{block content}
+
+	<h1>Git - Přeskládání </h1>
+	<br />
+	<a n:href="Git:sprava"><< Správa větví</a> |
+<a n:href="Git:vyber">Výběr revize >></a>
+	<hr>
+	
+	<div class="obsah">
+
+	<h2>Merge</h2>
+		<pre>		                          +--+
+		                      +---+C4|   master
+		                      |   +--+
+		   +----+  +----+  +--+-+
+		   | C0 &lt;--+ C1 &lt;--+ C2 |
+		   +----+  +----+  +--+-+
+		                      |   +--+
+		                      +---+C3|   topic
+		                          +--+
+		</pre>
+		<pre>		                          +--+
+		                      +---+C4+----+
+		                      |   +--+    |
+		   +----+  +----+  +--+-+        ++-+  +------+   +-----+
+		   | C0 &lt;--+ C1 &lt;--+ C2 |        |C5|  |master|   |topic|
+		   +----+  +----+  +--+-+        +-++  +------+   +-----+
+		                      |   +--+     |
+		                      +---+C3+-----+
+		                          +--+
+		</pre>
+		<h2>přeskládání - rebasing</h2>
+		<p>
+			Příkaz rebase vezme všechny změny, které byli zapsány na jedné větvi, a nechá je znovu provést
+			na jiné větvi.
+		</p>
+		<h2>$ git rebase master</h2>
+		<pre>
+		                                              topic
+
+		   +----+  +----+  +--+-+  +----+   +----+    +----+
+		   | C0 &lt;--+ C1 &lt;--+ C2 &lt;--+ C3 &lt;---+ C4 &lt;----+ C5 |
+		   +----+  +----+  +--+-+  +----+   +----+    +----+
+
+		                                    master
+		</pre>
+		<h2>$ git rebase --onto master server client</h2>
+		<pre>
+
+
+		    C0      C1      C2      C5      C6
+
+		    +---------------+--------------------------------------&gt;   master
+		                    |
+		                    |       C3      C4      C7      C10
+		                    |
+		                    +-------+------------------------------&gt;   server
+		                            |
+		                            |       C8      C9
+		                            |
+		                            +-------+----------------------&gt;   client
+		</pre>
+		<pre>
+
+
+		    C0      C1      C2      C5      C6      C8      C9
+
+		    +---------------+--------------------------------------&gt;   master    client
+		                    |
+		                    |       C3      C4      C7      C10
+		                    |
+		                    +-------+------------------------------&gt;   server
+		</pre>
+		<p class="minus">
+			Nepřeskládavejte revize, které jsou odeslány na server.
+		</p>
+
+		
+	</div>
+
+
+
+{/block}

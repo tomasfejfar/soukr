@@ -1,0 +1,46 @@
+{* This is temporary page, you can delete it *}
+
+{block content}
+
+	<h1>Git - snímky nikoli rozdíly</h1>
+	<br />
+	<a n:href="Git:pouziti"><< Použití</a> |
+<a n:href="Git:vypocet">Kontrolní výpočet >></a>
+	<hr>
+	
+	<div class="obsah">
+
+	<h2>Zapomeňte na to co víte - Git pracuje jinak</h2>
+	<p>
+		Většina ost. verzovacích systémů ukládá informace jako seznamy změn jednotlivých souborů - chápou je
+		jako uložené sady souborů a seznamů změn souboru / projektu v čase.
+	</p>
+		<pre>
+		   Revize 1      Revize 2      Revize 3      Revize 4     Revize 5
+		   +-------------------------------------------------------------&gt;
+
+		   Soubor A  +--&gt; C1 +-----------------------&gt; C2 +--------------&gt;
+
+		   Soubor B  +-------------------------------&gt; C1 +-------&gt; C2 +-&gt;
+
+		   Soubor C  +--&gt; C1 +---------&gt; C2 +--------&gt; C3 +--------------&gt;
+		</pre>
+	<p>
+		Git chápe data projektu jako sadu snímků (= snapshots) vlastního malého systému souborů.
+		Pokaždé když uložíte stav projektu, git v podstatě vyfotí, jak vypadají soubory projektu
+		v daném okamžiku a uloží reference na tento snímek. Pokud nebyl některý soubor změněn,
+		Git je neukládá znovu, ale pouze odkaz na předchozí snímek identického souboru.
+	</p>
+		<pre>
+		   Revize 1      Revize 2      Revize 3      Revize 4     Revize 5
+		   +-------------------------------------------------------------&gt;
+
+		   Soubor A +---&gt; A1 +---------&gt; A1 +-------&gt; A2 +-------&gt; A2
+
+		   Soubor B +---&gt; B  +---------&gt; B  +-------&gt; B  +-------&gt; B1
+
+		   Soubor C +---&gt; C1 +---------&gt; C2 +-------&gt; C3 +-------&gt; C3
+		</pre>
+
+	</div>
+{/block}

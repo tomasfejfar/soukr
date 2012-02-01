@@ -1,0 +1,30 @@
+{* This is temporary page, you can delete it *}
+
+{block content}
+
+	<h1>Git - kontrola stavů souborů </h1>
+	<br />
+	<a n:href="Git:inicializace"><< Inicializace</a> |
+<a n:href="Git:ignorace">Ignorace >></a>
+	<hr>
+	
+	<div class="obsah">
+
+	<h2>$ git status</h2>
+		<code>
+			$ git status <br />
+			# On branch master <br />
+			nothing to commit (working directory clean)
+		</code>
+	</div>
+
+	<h2>$ git add SouborA.txt</h2>
+		<code>
+			Untracked files: <br />
+			(use "git add [file]..." to include in what will be committed)<br />
+			SouborA.txt<br />
+			nothing added to commit but untracked files present (use "git add" to track)
+		</code>
+	</div>
+
+{/block}

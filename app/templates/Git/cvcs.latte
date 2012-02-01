@@ -1,0 +1,49 @@
+{* This is temporary page, you can delete it *}
+
+{block content}
+
+	<h1>Git - teorie - CVCS</h1>
+	<br />
+	<a n:href="Git:teorie"><< Teorie</a> |
+<a n:href="Git:dcvs">DCVS >></a>
+	<hr>
+	
+	<div class="obsah">
+
+	<h2>Centralizované systémy správy verzí</h2>
+		<ul class="plus">
+			<li>Spolupráce s dalšími spolupracovníky</li>
+			<li>CVS, Subversion, Perforce</li>
+			<li>Z centrálního úložiště si data ztahují ostatní klienti</li>
+			<li>Nástroje, diff, merge, do <u>určité</u> míry vím co dělají ostatní, ...</li>
+		</ul>
+
+		<ul class="minus">
+			<li>Centrální úložiště - výpadek jedinného místa - připojení k internetu</li>
+			<li>Centrální úložiště - zníčení diskového úložiště - ztráta projektu</li>
+			<li>Operace jsou celkem složité, vlastní omyly</li>
+			<li>Drtivá část operací je on-line</li>
+		</ul>
+		<pre>
+
+		                                     +-----------------------------------+
+		                                     |                                   |
+		                                     |    Databáze verzí na serveru      |
+		                                     |                                   |
+		   +-------------------------+       |                                   |
+		   |Počítač A - lokální kopie| &lt;----+|    Revize 1  +                    |
+		   +-------------------------+       |              |                    |
+		                                     |              |                    |
+		   +-------------------------+       |              |                    |
+		   |Počítač B - lokální kopie| &lt;----+|    Revize 2  |                    |
+		   +-------------------------+       |              |                    |
+		                                     |              |                    |
+		                                     |              |                    |
+		                                     |    Revize 3  v                    |
+		                                     |                                   |
+		                                     |                                   |
+		                                     +-----------------------------------+
+		</pre>
+
+	</div>
+{/block}

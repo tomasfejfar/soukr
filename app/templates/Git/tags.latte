@@ -1,0 +1,37 @@
+{* This is temporary page, you can delete it *}
+
+{block content}
+
+	<h1>Git - Značky </h1>
+	<br />
+	<a n:href="Git:push"><< Odesílání práce</a> |
+<a n:href="Git:vetve">Větve >></a>
+	<hr>
+	
+	<div class="obsah">
+
+	<h2>$ git tag</h2>
+		<ul>
+			<li>v abecedním pořadí</li>
+			<li>podle konkrétní masky</li>
+		</ul>
+	<h2>$ git tag -a v1.4 -m 'my version 1.4'</h2>
+		<ul>
+			<li>anotovaná značka, kontrolní součet parametrů (viz níže)</li>
+			<li>autor značky (tagger), e-mail, datum, vlastní zpráva, mohou být podepsány (signed),
+				ověřeny (verified)</li>
+		</ul>
+	<h2>$ git tag</h2>
+	<h2>$ git show v1.4</h2>
+	<h2>$ git tag v1.4-lw</h2>
+		<p>
+			prostá značka, kontrolní součet revize uložený v souboru
+		</p>
+	<h2>$ git tag -a v1.2 9fceb02</h2>
+	<h2>$ git push origin v1.4</h2>
+	<h2>$ git push origin --tags</h2>
+
+	</div>
+
+
+{/block}

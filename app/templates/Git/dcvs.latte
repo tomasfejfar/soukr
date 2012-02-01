@@ -1,0 +1,47 @@
+{* This is temporary page, you can delete it *}
+
+{block content}
+
+	<h1>Git - teorie - DCVS</h1>
+	<br />
+	<a n:href="Git:cvcs"><< CVCS</a> |
+<a n:href="Git:git">Git >></a>
+	<hr>
+	
+	<div class="obsah">
+
+	<h2>Distribuované systémy správy verzí ( Distributed Version Control System) </h2>
+		<ul class="plus">
+			<li>Git, Mercurial, Bazaar, Darcs</li>
+			<li>Stahování celého repozitáře, nejen poslední snímek revize</li>
+			<li>Pokud dojde ke kolapsu serveru, lze jej obnovit od libovolného uživatele, který si celý repozitář
+			naklonoval. Každý lokální klon je plnohodnotnou verzí repozitáře ze serveru.</li>
+			<li>Drtivá část operací je off-line</li>
+		</ul>
+		<pre>
+		+--------------------------------+
+		|            Server              |
+		|    c1      c2      c3      c4  |
+		|    +------------------------&gt;  |
+		+--------------------------------+
+		             +     +
+		             |     |
+		+---------+  |     |  +---------+
+		|Počítač A|  |     |  |Počítač B|
+		|         |  |     |  |         |
+		| c1 +    |+-+     +-+| c1 +    |
+		|    |    |           |    |    |
+		|    |    |           |    |    |
+		| c2 |    |           | c2 |    |
+		|    |    |           |    |    |
+		|    |    |           |    |    |
+		| c3 |    |           | c3 |    |
+		|    |    |           |    |    |
+		|    |    |           |    |    |
+		| c4 v    |           | c4 v    |
+		+---------+           +---------+
+		</pre>
+
+
+	</div>
+{/block}
